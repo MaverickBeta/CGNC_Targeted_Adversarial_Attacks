@@ -39,7 +39,9 @@ else:
     netG = CrossAttenGenerator(nz=args.nz)
 
 # Load Generator
-netG.load_state_dict(torch.load(args.load_path, map_location=device))
+checkpoint = torch.load(args.load_path, map_location=device)
+print(checkpoint.keys())  # 第一次运行时查看有哪些key
+netG.load_state_dict(checkpoint['model_state_dict'])  # 用正确的key加载
 netG = netG.to(device)
 netG.eval()
 

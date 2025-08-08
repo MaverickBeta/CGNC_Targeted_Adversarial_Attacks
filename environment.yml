@@ -1,4 +1,4 @@
-name: CGNC
+xname: CGNC
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - pytorch
